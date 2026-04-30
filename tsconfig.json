@@ -1,12 +1,17 @@
 {
   "compilerOptions": {
-  "target": "es2016",
-  "module": "commonjs",
+  "moduleDetection": "force",
+  "target": "ES6",
+  "module": "ESNext",
   "rootDir": "./src",
   "outDir": "./dist",
   "esModuleInterop": true,
   "forceConsistentCasingInFileNames": true,
   "strict": true,
-  "skipLibCheck": true
-  }
+  "skipLibCheck": true,
+  "moduleResolution": "bundler",
+  "lib": ["ESNext","DOM"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }

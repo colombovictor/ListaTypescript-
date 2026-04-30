@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="img/favicon_victor_colombo.ico"
+      type="image/x-icon"
+    />
+    <script type="module" src="dist/index.js"></script>
+
+    <style>
+      /* CSS */
+      .button-52 {
+        font-size: 16px;
+        font-weight: 200;
+        letter-spacing: 1px;
+        padding: 13px 20px 13px;
+        outline: 0;
+        border: 1px solid black;
+        cursor: pointer;
+        position: relative;
+        background-color: rgba(0, 0, 0, 0);
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+      }
+
+      .button-52:after {
+        content: "";
+        background-color: #ffe54c;
+        width: 100%;
+        z-index: -1;
+        position: absolute;
+        height: 100%;
+        top: 7px;
+        left: 7px;
+        transition: 0.2s;
+      }
+
+      .button-52:hover:after {
+        top: 0px;
+        left: 0px;
+      }
+
+      @media (min-width: 768px) {
+        .button-52 {
+          padding: 13px 50px 13px;
+        }
+      }
+      body {
+        position: relative;
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      /* camada da imagem */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        background-size: cover;
+        background-position: center;
+
+        z-index: -1;
+      }
+      body {
+        background-image: url("img/Art\ Pixel\ Sticker\ by\ adieloart.gif");
+        text-align: center;
+        align-items: center;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      h1 {
+        color: white;
+        text-decoration: underline;
+      }
+      img {
+        position: fixed;
+        bottom: 40px; /* distância do fundo */
+        right: 10px; /* distância da esquerda */
+        width: 250px; /* ajuste o tamanho se quiser */
+      }
+      .mario {
+        position: fixed;
+        bottom: 40px; /* distância do fundo */
+        left: 10px; /* distância da esquerda */
+        width: 250px; /* ajuste o tamanho se quiser */
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1 style="border-radius: 20px"><strong>Repetição</strong></h1>
+
+      <button class="button-52" id="btn"><strong>Botão 1</strong></button>
+
+      <button class="button-52" id="btn-2">Botão 2</button>
+      <button class="button-52" id="btn-3">Botão 3</button>
+      <button class="button-52" id="btn-4">Botão 4</button>
+      <hr />
+    </div>
+    <div>
+      <h1><strong> Condicional</strong></h1>
+      <button class="button-52" id="btn-1.1"><strong>Botão 1</strong></button>
+      <button class="button-52" id="btn-1.2">Botão 2</button>
+      <button class="button-52">Botão 3</button>
+      <button class="button-52">Botão 4</button>
+    </div>
+    <div>
+      <h1><strong>Funções</strong></h1>
+      <button class="button-52" id="btn-f1"><strong>Botão 1</strong></button>
+      <button class="button-52" id="btn-f2">Botão 2</button>
+      <button class="button-52">Botão 3</button>
+      <button class="button-52" id="btn-f4">Botão 4</button>
+      <button class="button-52" id="btn-f5">Botão 5</button>
+      <button class="button-52" id="btn-f7">Botão 7</button>
+      <button class="button-52" id="btn-f8">Botão 8</button>
+    </div>
+    <img src="img/Art Pixel Sticker by adieloart.gif" alt="" />
+    <img class="mario" src="img/Mario Bros Art GIF.gif" alt="" />
+  </body>
+</html>
