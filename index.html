@@ -11,186 +11,189 @@
     <script type="module" src="dist/index.js"></script>
 
     <style>
-   /* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+      /* RESET */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-/* BODY */
-body {
-  position: relative;
-  margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
- background-color: black;
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-  color: white;
-}
+      /* BODY */
+      body {
+        position: relative;
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: black;
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        color: white;
+      }
 
-/* camada escura por cima */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.75); /* mais suave */
-  z-index: -1;
-}
+      /* camada escura */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.75);
+        z-index: -1;
+      }
 
-/* TITULOS */
-h1 {
-  margin: 20px 0;
-  padding: 10px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(5px);
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
+      /* 🔥 CONTEÚDO NA FRENTE */
+      body > div {
+        position: relative;
+        z-index: 2;
+      }
 
-/* ESPAÇAMENTO ENTRE BLOCOS */
-div {
-  margin: 30px 0;
-}
+      /* TITULOS */
+      h1 {
+        margin: 20px 0;
+        padding: 10px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(5px);
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
 
-/* BOTÃO */
-.button-52 {
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  padding: 12px 22px;
-  margin: 8px;
+      div {
+        margin: 30px 0;
+      }
 
-  border: 2px solid white;
-  border-radius: 10px;
+      /* BOTÃO */
+      .button-52 {
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        padding: 12px 22px;
+        margin: 8px;
+        border: 2px solid white;
+        border-radius: 10px;
+        cursor: pointer;
+        position: relative;
+        background: transparent;
+        color: white;
+        transition: all 0.25s ease;
+        overflow: hidden;
+      }
 
-  cursor: pointer;
-  position: relative;
-  background: transparent;
-  color: white;
+      .button-52:after {
+        content: "";
+        background: linear-gradient(45deg, #ffe54c, #ffcc00);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        z-index: -1;
+        border-radius: 10px;
+        transition: 0.25s ease;
+      }
 
-  transition: all 0.25s ease;
-  overflow: hidden;
-}
+      .button-52:hover {
+        transform: translateY(-3px) scale(1.03);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      }
 
-/* efeito amarelo atrás */
-.button-52:after {
-  content: "";
-  background: linear-gradient(45deg, #ffe54c, #ffcc00);
-  width: 100%;
-  height: 100%;
+      .button-52:hover:after {
+        top: 0;
+        left: 0;
+      }
 
-  position: absolute;
-  top: 6px;
-  left: 6px;
-  z-index: -1;
+      .button-52:active {
+        transform: scale(0.95);
+      }
 
-  border-radius: 10px;
-  transition: 0.25s ease;
-}
+      @media (min-width: 768px) {
+        .button-52 {
+          padding: 14px 40px;
+          font-size: 15px;
+        }
+      }
 
-/* hover */
-.button-52:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-}
+      /* 🔥 GIFS ATRÁS */
+      img,
+      .mario {
+        position: fixed;
+        bottom: 20px;
+        width: 150px;
+        opacity: 0.7;
+        transition: 0.3s;
+        animation: flutuar 3s ease-in-out infinite;
+        pointer-events: none;
+        z-index: 0; /* 🔥 FICA ATRÁS */
+      }
 
-.button-52:hover:after {
-  top: 0;
-  left: 0;
-}
+      img {
+        right: 15px;
+      }
 
-/* clique */
-.button-52:active {
-  transform: scale(0.95);
-}
+      .mario {
+        left: 15px;
+      }
 
-/* RESPONSIVO */
-@media (min-width: 768px) {
-  .button-52 {
-    padding: 14px 40px;
-    font-size: 15px;
-  }
-}
+      img:hover,
+      .mario:hover {
+        transform: scale(1.1);
+      }
 
-/* IMAGENS */
-img {
-  position: fixed;
-  bottom: 20px;
-  right: 15px;
-  width: 200px;
-  opacity: 0.9;
-  transition: 0.3s;
-}
-
-img:hover {
-  transform: scale(1.1);
-}
-
-/* MARIO */
-.mario {
-  position: fixed;
-  bottom: 20px;
-  left: 15px;
-  width: 200px;
-  opacity: 0.9;
-  transition: 0.3s;
-}
-
-.mario:hover {
-  transform: scale(1.1);
-}
-@keyframes flutuar {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
-}
-
-img,
-.mario {
-  animation: flutuar 3s ease-in-out infinite;
-}
-img,
-.mario {
-  pointer-events: none;
-}
+      @keyframes flutuar {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
     </style>
-    <title>Atividade Programaçõa II</title>
+
+    <title>Atividade Programação II</title>
   </head>
+
   <body>
     <div>
-      <h1 style="border-radius: 20px"><strong>Repetição</strong></h1>
-
-      <button class="button-52" id="btn"><strong>Botão 1</strong></button>
-
+      <h1><strong>Repetição</strong></h1>
+      <button class="button-52" id="btn">Botão 1</button>
       <button class="button-52" id="btn-2">Botão 2</button>
       <button class="button-52" id="btn-3">Botão 3</button>
       <button class="button-52" id="btn-4">Botão 4</button>
       <hr />
     </div>
+
     <div>
-      <h1><strong> Condicional</strong></h1>
-      <button class="button-52" id="btn-1.1"><strong>Botão 1</strong></button>
+      <h1><strong>Condicional</strong></h1>
+      <button class="button-52" id="btn-1.1">Botão 1</button>
       <button class="button-52" id="btn-1.2">Botão 2</button>
       <button class="button-52">Botão 3</button>
       <button class="button-52">Botão 4</button>
     </div>
+
     <div>
       <h1><strong>Funções</strong></h1>
-      <button class="button-52" id="btn-f1"><strong>Botão 1</strong></button>
+      <button class="button-52" id="btn-f1">Botão 1</button>
       <button class="button-52" id="btn-f2">Botão 2</button>
-      <button class="button-52">Botão 3</button>
+      <button class="button-52" id="btn-f3">Botão 3</button>
       <button class="button-52" id="btn-f4">Botão 4</button>
       <button class="button-52" id="btn-f5">Botão 5</button>
       <button class="button-52" id="btn-f7">Botão 7</button>
       <button class="button-52" id="btn-f8">Botão 8</button>
+      <button class="button-52" id="btn-f10">Botão 10</button>
     </div>
+
+    <div>
+      <h1><strong>Arrays</strong></h1>
+      <button class="button-52" id="btn-b1">Botão 1</button>
+      <button class="button-52" id="btn-b2">Botão 2</button>
+      <button class="button-52" id="btn-b3">Botão 3</button>
+      <button class="button-52" id="btn-b4">Botão 4</button>
+      <button class="button-52" id="btn-b5">Botão 5</button>
+      <button class="button-52" id="btn-b6">Botão 6</button>
+      <button class="button-52" id="btn-b7">Botão 7</button>
+      <button class="button-52" id="btn-b8">Botão 8</button>
+      <button class="button-52" id="btn-b9">Botão 9</button>
+    </div>
+
+    <!-- GIFS -->
     <img src="img/Art Pixel Sticker by adieloart.gif" alt="" />
     <img class="mario" src="img/Mario Bros Art GIF.gif" alt="" />
   </body>
